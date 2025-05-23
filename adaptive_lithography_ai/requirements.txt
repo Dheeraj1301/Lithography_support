@@ -1,0 +1,11 @@
+pandas
+numpy
+scikit-learn
+torch
+gym
+stable-baselines3
+streamlit
+openai
+matplotlib
+seaborn
+Yaml
