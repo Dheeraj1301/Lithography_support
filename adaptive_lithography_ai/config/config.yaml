@@ -1,0 +1,35 @@
+project:
+  name: adaptive_lithography_ai
+  seed: 42
+
+data:
+  raw_path: data/raw/
+  processed_path: data/processed/
+  synthetic_samples: 5000
+
+model:
+  type: LSTM
+  input_size: 4
+  hidden_size: 64
+  num_layers: 2
+  dropout: 0.3
+  output_size: 1
+  checkpoint_dir: "checkpoints/"
+
+rl:
+  env_name: LithoEnv-v0
+  algorithm: PPO
+  policy: MlpPolicy
+  total_timesteps: 100000
+
+logging:
+  log_dir: logs/
+  log_level: INFO
+
+api:
+  huggingface_token: ${HF_TOKEN}
+  openai_model: gpt-4
+
+settings:
+  temperature: 0.7
+  max_tokens: 500
